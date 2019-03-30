@@ -1,0 +1,16 @@
+```{r}
+library(ggplot2)
+tcgproject <-read.csv("USA Births.csv",encoding="UTF-8")
+print(tcgproject)
+
+ggplot(tcgproject,aes(year,births))+geom_point(shape=1)+geom_smooth(method=lm)
+
+data(Project)
+fit1 <- lm(year~births,data=tcgproject)
+summary(fit1)
+
+plot(year~births, data=tcgproject)
+
+abline(fit1)
+
+```
